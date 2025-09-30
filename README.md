@@ -317,8 +317,8 @@ Questo progetto è sotto licenza MIT. Vedi il file `LICENSE` per i dettagli.
 Per supporto e domande:
 
 - 🐛 **Issues**: [GitHub Issues](your-repo-url/issues)
-- 📧 **Email**: your-email@example.com
-- 💬 **Discord**: Your Discord Server
+- 📧 **Email**: federico@germiniasi.com
+
 
 ---
 
