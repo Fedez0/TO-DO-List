@@ -5,11 +5,17 @@ services:
     image: mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: Micai0mo!
-      MYSQL_DATABASE: todolistdb
+      MYSQL_DATABASE: site
       MYSQL_USER: todolistuser
       MYSQL_PASSWORD: Micai0mo!
     ports:
       - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 10
+      interval: 5s
+      start_period: 30s
   # Frontend
   frontend:
     build:
@@ -30,12 +36,14 @@ services:
       - "3000:3000"
     container_name: to-do-list-backend
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     environment:
       - DB_HOST=db
       - DB_USER=root
       - DB_PASSWORD=Micai0mo!
       - DB_NAME=site
+    restart: unless-stopped
 
 # Network opzionale
 networks:

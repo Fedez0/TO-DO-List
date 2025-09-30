@@ -26,10 +26,7 @@ const connection = mysql.createConnection({
   host: process.env.DB_HOST || 'db',
   user: process.env.DB_USER || 'root',
   password: process.env.DB_PASSWORD || 'Micai0mo!',
-  database: process.env.DB_NAME || 'site',
-  connectTimeout: 60000,
-  acquireTimeout: 60000,
-  timeout: 60000
+  database: process.env.DB_NAME || 'site'
 });
 
 // Test della connessione
