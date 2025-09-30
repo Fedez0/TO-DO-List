@@ -11,7 +11,7 @@ services:
     ports:
       - "3306:3306"
   # Frontend sviluppo  
-  frontend-dev:
+  frontend:
     build:
       context: ./frontend
       dockerfile: dockerfile.dev
