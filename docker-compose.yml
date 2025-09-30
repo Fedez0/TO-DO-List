@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: Micai0mo!
+      MYSQL_DATABASE: todolistdb
+      MYSQL_USER: todolistuser
+      MYSQL_PASSWORD: Micai0mo!
+    ports:
+      - "3306:3306"
+  # Servizio per sviluppo
+  to-do-list-dev:
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    ports:
+      - "80:5173"
+    container_name: to-do-list-development
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    restart: unless-stopped
+    profiles:
+      - dev
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    container_name: to-do-list-backend
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=Micai0mo!
+      - DB_NAME=site
+
+# Network opzionale
+networks:
+  default:
+    name: to-do-list-network
