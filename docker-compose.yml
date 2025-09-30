@@ -10,16 +10,16 @@ services:
       MYSQL_PASSWORD: Micai0mo!
     ports:
       - "3306:3306"
-  # Servizio per sviluppo
-  to-do-list-dev:
+  # Frontend sviluppo  
+  frontend-dev:
     build:
-      context: .
+      context: ./frontend
       dockerfile: dockerfile.dev
     ports:
       - "80:5173"
-    container_name: to-do-list-development
+    container_name: to-do-list-frontend-dev
     volumes:
-      - .:/app
+      - ./frontend:/app
       - /app/node_modules
     environment:
       - CHOKIDAR_USEPOLLING=true
