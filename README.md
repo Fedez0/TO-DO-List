@@ -2,7 +2,30 @@
 
 Una moderna applicazione TO-DO List costruita con React, Node.js, MySQL e Docker.
 
-![TO-DO List Banner](https://via.placeholder.com/800x200/3F72AF/FFFFFF?text=TO-DO+List+App)
+## 🛠️ Tecnologie Utilizzate
+
+<div align="center">
+
+### Frontend
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+### Backend
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+
+### DevOps & Tools
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Docker Compose](https://img.shields.io/badge/Docker_Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
+### Package Managers
+![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+
+</div>
 
 ## 🚀 Caratteristiche
 
@@ -36,7 +59,7 @@ Prima di iniziare, assicurati di avere installato:
 ### 1. Clona il repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Fedez0/TO-DO-List.git
 cd TO-DO-List
 ```
 
