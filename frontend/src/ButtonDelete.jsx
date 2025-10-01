@@ -2,7 +2,9 @@ function ButtonDelete(props) {
     var { todo, user } = props.props;
     async function handleClick() {
         try {
-            const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:3000' : `http://${window.location.hostname}:3000`;
+            const protocol = window.location.protocol; // 'http:' o 'https:'
+            const hostname = window.location.hostname;
+            const backendUrl = hostname === 'localhost' ? 'http://localhost:3000' : `${protocol}//${hostname}:3000`;
             const res = await fetch(`${backendUrl}/delete-task`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },

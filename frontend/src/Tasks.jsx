@@ -21,7 +21,9 @@ function Tasks(props) {
 
 
             // Ora fai la richiesta principale
-            const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:3000' : `http://${window.location.hostname}:3000`;
+            const protocol = window.location.protocol; // 'http:' o 'https:'
+            const hostname = window.location.hostname;
+            const backendUrl = hostname === 'localhost' ? 'http://localhost:3000' : `${protocol}//${hostname}:3000`;
             const res = await fetch(`${backendUrl}/get-all-tasks-for-user`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
