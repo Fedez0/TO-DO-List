@@ -2,7 +2,8 @@ function ButtonDelete(props) {
     var { todo, user } = props.props;
     async function handleClick() {
         try {
-            const res = await fetch("http://localhost:3000/delete-task", {
+            const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:3000' : `http://${window.location.hostname}:3000`;
+            const res = await fetch(`${backendUrl}/delete-task`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ user, todo })

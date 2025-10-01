@@ -9,7 +9,8 @@ function ButtonComplete(props) {
         <button className="btn btn-success" onClick={
             async () => {
                 try {
-                    const res = await fetch("http://localhost:3000/mark-task-as-completed", {
+                    const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:3000' : `http://${window.location.hostname}:3000`;
+                    const res = await fetch(`${backendUrl}/mark-task-as-completed`, {
                         method: "POST",
                         headers: { "Content-Type": "application/json" },
                         body: JSON.stringify({ user, todo })

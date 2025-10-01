@@ -24,10 +24,9 @@ function Modal(props) {
 
                 const created = today;
 
-
-
                 const deadline = date.split('-').reverse().join('-');
-                const res = await fetch("http://localhost:3000/add-new-task", {
+                const backendUrl = window.location.hostname === 'localhost' ? 'http://localhost:3000' : `http://${window.location.hostname}:3000`;
+                const res = await fetch(`${backendUrl}/add-new-task`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({ user, todo, created, deadline, temp })
