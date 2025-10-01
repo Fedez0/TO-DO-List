@@ -7,7 +7,5 @@ import '../style/index.css'
 import Wrapper from './Wrapper.jsx';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <Wrapper />
-  </StrictMode>,
+  <Wrapper />
 )
