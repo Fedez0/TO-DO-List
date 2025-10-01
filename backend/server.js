@@ -41,13 +41,46 @@ connection.connect((err) => {
     console.log('Host:', connection.config.host);
     console.log('User:', connection.config.user);
 
+    // Crea la tabella list se non esiste
+    createTableIfNotExists();
   }
 });
+
+// Funzione per creare la tabella list se non esiste
+function createTableIfNotExists() {
+  const createTableQuery = `
+    CREATE TABLE IF NOT EXISTS list (
+      user VARCHAR(255) NOT NULL,
+      todo VARCHAR(255) NOT NULL,
+      created VARCHAR(50),
+      deadline VARCHAR(50),
+      stare TINYINT DEFAULT 0,
+    )
+  `;
+
+  connection.query(createTableQuery, (err, results) => {
+    if (err) {
+      console.error('❌ Errore nella creazione della tabella:', err.message);
+    } else {
+      console.log('✅ Tabella "list" verificata/creata con successo');
+      
+      // Test query per verificare la tabella
+      connection.query('SELECT * from list', (err, results) => {
+        if (err) {
+          console.error('❌ Errore nella query di test:', err.message);
+        } else {
+          console.log('✅ Dati registrati:', results.length, 'record trovati');
+        }
+      });
+    }
+  });
+}
 
 // Test query semplice
 connection.query('SELECT * from list', (err, results) => {
   if (err) {
     console.error('❌ Errore nella query di test:', err.message);
+
   } else {
     console.log('✅ Dati registrati:', results.length, 'record trovati');
   }
