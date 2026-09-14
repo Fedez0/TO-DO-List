@@ -188,7 +188,7 @@ curl -X POST http://localhost:3000/get-number-of-tasks \
 ```yaml
 Database: site
 Username: root
-Password: Micai0mo!
+Password: ***
 Host: db (internal), localhost:3306 (external)
 ```
 
